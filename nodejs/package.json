@@ -1,0 +1,14 @@
+{
+  "name": "ascend_assignment_nodejs",
+  "version": "1.0.0",
+  "description": "NodeJS app for ascend assignment",
+  "author": "Nattasak Kanacharoen <nattasak13472@gmail.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  },
+  "devDependencies": {}
+}
