@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require('../main');
-const req = request(app);
+const req = request.agent(app.listen());
 
 // START UNIT TEST 
 describe("START UNIT TEST",function(){
