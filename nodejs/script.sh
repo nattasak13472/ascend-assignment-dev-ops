@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t ascend-assignment-nodejs .
+docker build -t nattasak13472/ascend-assignment-nodejs .

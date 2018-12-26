@@ -3,9 +3,11 @@ const app = express();
 const PORT = 8080;
 
 app.get('/', (req, res) => {
-  res.send('Hello this is assignment');
+    return res.json({ 'title': 'HELLO THIS IS ASCEND ASSIGNMENT' });
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`)
+    console.log(`Listening on port ${PORT}`)
 });
+
+module.exports = app;

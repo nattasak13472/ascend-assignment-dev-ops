@@ -5,10 +5,14 @@
   "author": "Nattasak Kanacharoen <nattasak13472@gmail.com>",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "test": "./node_modules/mocha/bin/mocha tests/test.js --reporter spec"
   },
   "dependencies": {
     "express": "^4.16.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  }
 }
