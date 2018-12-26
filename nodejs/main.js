@@ -6,8 +6,10 @@ app.get('/', (req, res) => {
     return res.json({ 'title': 'HELLO THIS IS ASCEND ASSIGNMENT' });
 });
 
-app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
-});
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(PORT, () => {
+        console.log(`Listening on port ${PORT}`)
+    });
+}
 
 module.exports = app;
