@@ -38,12 +38,12 @@ _( more detail : https://jenkins.io/doc/book/installing/ )_
 
 ### Create new Jenkins's job
 
-#### Go to create new jenkins's job page
+#### 1. Go to create new jenkins's job page
     url: <your-jenkins-host>:8888/view/all/newJob
 
-#### Enter job's name and choose Pipeline 
+#### 2. Enter job's name and choose Pipeline 
 
-#### On Pipeline section
+#### 3. On Pipeline section
 
 Select Definition > Pipeline script
 
