@@ -4,7 +4,7 @@
 
 ### Install Docker 
 
-    https://docs.docker.com/install
+https://docs.docker.com/install
 
 ### Clone ascend-assignment-dev-ops to your local machine
 
@@ -30,16 +30,16 @@ Run Jenkins docker container
 
 _( more detail : https://jenkins.io/doc/book/installing/ )_
 
-Set up jenkins's suggested plugins and [NodeJs plugin](https://wiki.jenkins.io/display/JENKINS/NodeJS+Plugin) <br>
-    _url: \<your-jenkins-host>:8888/pluginManager/_
+#### Set up jenkins's suggested plugins and [NodeJs plugin](https://wiki.jenkins.io/display/JENKINS/NodeJS+Plugin)
+    url: <your-jenkins-host>:8888/pluginManager/
 
-Set up global credentials (username, password) for DockerHub using name 'docker-hub' <br>
-    _url: \<your-jenkins-host>:8888/credentials/store/system/domain/_/_
+#### Set up global credentials (username, password) for DockerHub using name 'docker-hub'
+    url: <your-jenkins-host>:8888/credentials/store/system/domain/_/
 
 ### Create new Jenkins's job
 
-#### Go to create new jenkins's job page <br>
-    _url: \<your-jenkins-host>:8888/view/all/newJob_
+#### Go to create new jenkins's job page
+    url: <your-jenkins-host>:8888/view/all/newJob
 
 #### Enter job's name and choose Pipeline 
 
@@ -48,8 +48,6 @@ Set up global credentials (username, password) for DockerHub using name 'docker-
 Select Definition > Pipeline script
 
 Enter script : 
-
-    ```
 
         pipeline {
     
@@ -102,11 +100,9 @@ Enter script :
             }
         }
 
-    ```
-
 ### Install Minikube 
 
-    https://kubernetes.io/docs/tasks/tools/install-minikube/
+https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Start Minikube 
 

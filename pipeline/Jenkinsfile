@@ -32,7 +32,7 @@ pipeline {
         
         stage('Building Image') {
             steps{
-                sh "cd nodejs && docker tag ascend-assignment-nodejs " + registry + ":$BUILD_NUMBER && docker build -t " + registry + ":$BUILD_NUMBER ."
+                sh "cd nodejs && docker tag ascend-assignment-nodejs " + registry + ":1.$BUILD_NUMBER && docker build -t " + registry + ":1.$BUILD_NUMBER ."
             }
         }
         
