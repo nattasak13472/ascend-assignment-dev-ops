@@ -6,12 +6,12 @@ const req = request.agent(app.listen());
 describe("START UNIT TEST",function(){
 
     // Should response json as expected 
-    it("Should response json {'title':'HELLO THIS IS ASCEND ASSIGNMENT BUILD NO. 6'} ",function(done){
+    it("Should response json {'title':'HELLO THIS IS ASCEND ASSIGNMENT'} ",function(done){
 
         req.get('/')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
-            .expect(JSON.stringify({ 'title': 'HELLO THIS IS ASCEND ASSIGNMENT BUILD NO. 6' }))
+            .expect(JSON.stringify({ 'title': 'HELLO THIS IS ASCEND ASSIGNMENT' }))
             .expect(200, done);
         
     });
