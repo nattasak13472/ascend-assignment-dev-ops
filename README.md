@@ -106,32 +106,32 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Start Minikube 
 
-    minikube start
+    $ minikube start
 
 ### Create Deployment
 
 using this command to create new deployment:
 
-    kubectl run ascend-assignment-nodejs --image=<your-docker-registry>:<tag> --port=8080 --image-pull-policy=Always
+    $ kubectl run ascend-assignment-nodejs --image=<your-docker-registry>:<tag> --port=8080 --image-pull-policy=Always
 
 checking created deployment
 
-    kubectl get deployment
+    $ kubectl get deployment
 
 checking created pod
 
-    kubectl get pod
+    $ kubectl get pod
 
 ### Create Service
 
 using this command to create new service:
 
-    kubectl expose deployment ascend-assignment-nodejs --type=LoadBalancer 
+    $ kubectl expose deployment ascend-assignment-nodejs --type=LoadBalancer 
 
 checking created service
     
-    kubectl get services
+    $ kubectl get services
 
 run service via minikube
 
-    minikube service ascend-assignment-nodejs
+    $ minikube service ascend-assignment-nodejs
