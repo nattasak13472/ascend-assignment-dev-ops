@@ -1,52 +1,49 @@
 pipeline {
     
-  environment {
-    registry = "nattasak13472/ascend-assignment-nodejs"
-    registryCredential = 'dockerhub'
-    dockerImage = ''
-  }
-  
-  agent any
-  
-  tools { nodejs "node" }
-  
-  stages {
-    
-    stage('Cloning Git') {
-      steps {
-        git 'https://github.com/nattasak13472/ascend-assignment-dev-ops.git'
-      }
+    environment {
+        registry = "nattasak13472/ascend-assignment-nodejs"
+        registryCredential = 'docker-hub'
     }
     
-    stage('Build') {
-       steps {
-         sh 'cd nodejs && npm install'
-       }
-    }
+    agent any
     
-    stage('Test') {
-      steps {
-        sh 'cd nodejs && npm test'
-      }
-    }
+    tools { nodejs "node" }
     
-    stage('Building image') {
-      steps{
-        script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+    stages {
+      
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/nattasak13472/ascend-assignment-dev-ops.git'
+            }
         }
-      }
-    }
-    
-    stage('Deploy Image') {
-      steps{
-         script {
-            docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
-          }
+        
+        stage('Build') {
+            steps {
+                sh 'cd nodejs && npm install'
+            }
         }
-      }
+        
+        stage('Test') {
+            steps {
+                sh 'cd nodejs && npm test'
+            }
+        }
+        
+        stage('Building image') {
+            steps{
+                sh "cd nodejs && docker build -t " + registry + ":$BUILD_NUMBER ."
+            }
+        }
+        
+        stage('Deploy Image') {
+            steps {
+                script {
+                    docker.withRegistry('', registryCredential ) {
+                        sh "docker push " + registry
+                    }
+                }
+            }
+        }
+      
     }
-    
-  }
 }
