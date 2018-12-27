@@ -1,6 +1,7 @@
 pipeline {
     
     environment {
+        gitRepository = "https://github.com/nattasak13472/ascend-assignment-dev-ops.git"
         registry = "nattasak13472/ascend-assignment-nodejs"
         registryCredential = 'docker-hub'
     }
@@ -13,7 +14,7 @@ pipeline {
       
         stage('Cloning Git') {
             steps {
-                git 'https://github.com/nattasak13472/ascend-assignment-dev-ops.git'
+                git gitRepository
             }
         }
         
@@ -29,9 +30,9 @@ pipeline {
             }
         }
         
-        stage('Building image') {
+        stage('Building Image') {
             steps{
-                sh "cd nodejs && docker build -t " + registry + ":$BUILD_NUMBER ."
+                sh "cd nodejs && docker tag ascend-assignment-nodejs " + registry + ":$BUILD_NUMBER && docker build -t " + registry + ":$BUILD_NUMBER ."
             }
         }
         

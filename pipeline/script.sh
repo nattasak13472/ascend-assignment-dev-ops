@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t nattasak13472/ascend-assignment-jenkins .
+docker build -t ascend-assignment-jenkins .
