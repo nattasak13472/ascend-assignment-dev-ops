@@ -3,7 +3,7 @@ const app = express();
 const PORT = 8080;
 
 app.get('/', (req, res) => {
-    return res.json({ 'title': 'HELLO THIS IS ASCEND ASSIGNMENT' });
+    return res.json({ 'title': 'HELLO THIS IS ASCEND ASSIGNMENT BUILD NO. 6' });
 });
 
 if (process.env.NODE_ENV !== 'test') {
